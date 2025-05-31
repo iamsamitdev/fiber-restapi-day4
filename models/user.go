@@ -1,6 +1,8 @@
 package models
 
 // กำหนด Struct สำหรับ User
+// คล้ายการสร้าง model ในภาษาอื่น ๆ
+// โดยมีฟิลด์ต่าง ๆ ที่จำเป็นสำหรับผู้ใช้
 type User struct {
 	ID        int    `json:"id"`         // รหัสผู้ใช้
 	Username  string `json:"username"`   // ชื่อผู้ใช้

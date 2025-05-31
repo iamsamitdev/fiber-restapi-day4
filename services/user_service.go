@@ -7,12 +7,15 @@ import (
 )
 
 // UserService struct สำหรับจัดการผู้ใช้
+// คล้ายการสร้าง class ในภาษาอื่น ๆ
+// โดยมีฟังก์ชันต่าง ๆ สำหรับการลงทะเบียนและเข้าสู่ระบบผู้ใช้
 type UserService struct {
 	users  []models.User // จำลองฐานข้อมูลผู้ใช้ในหน่วยความจำ โดยใช้ slice
 	nextID int           // ID ถัดไปที่จะกำหนดให้ผู้ใช้ใหม่
 }
 
 // สร้างฟังก์ชันใหม่สำหรับ UserService
+// คล้ายการสร้าง constructor ในภาษาอื่น ๆ
 func NewUserService() *UserService {
 	return &UserService{
 		users:  []models.User{},
@@ -21,6 +24,7 @@ func NewUserService() *UserService {
 }
 
 // สร้างฟังก์ชัน Register สำหรับการลงทะเบียนผู้ใช้ใหม่
+// คล้ายการสร้าง method ในภาษาอื่น ๆ
 func (s *UserService) Register(user models.User) (*models.User, error) {
 	// ตรวจสอบว่ามีผู้ใช้อยู่แล้วหรือไม่
 	for _, u := range s.users {
@@ -50,6 +54,7 @@ func (s *UserService) Register(user models.User) (*models.User, error) {
 }
 
 // สร้างฟังก์ชัน Login
+// คล้ายการสร้าง method ในภาษาอื่น ๆ
 func (s *UserService) Login(username, password string) (*models.User, string, error) {
 	// ค้นหาผู้ใช้ตามชื่อผู้ใช้
 	for _, u := range s.users {
